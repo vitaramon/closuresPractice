@@ -1,3 +1,6 @@
 # closuresPractice
 
-Для примеров использования замыканий 
+For closures using examples;
+
+example #1: 
+php closuresIndex.php 
