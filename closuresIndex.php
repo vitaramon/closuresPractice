@@ -2,15 +2,20 @@
 
 include 'classes/Animals.php';
 
-$animals = [
-		'dog'  => [
-				'bark' => 'gav gavich',
-			],
-	];
-
+/** First example - simple using closure */
 $model = new Animals();
-
 $model->setAnimalType(Animals::ANIMAL_TYPE_DOG);
-$testResult = $model->checkClosuresInWork(Animals::CLOSURE_EXAMPLE_TYPE_ONE);
+$testResultFirst = $model->checkClosuresInWork(Animals::CLOSURE_EXAMPLE_TYPE_ONE);
 
-var_dump($testResult);
+foreach ($testResultFirst as $resultRow) {
+    echo $resultRow . PHP_EOL;
+}
+
+/** Second example - using BindTo */
+$customClosure = function () {
+    echo $this->getBarkForCurrentAnimal();
+};
+
+$newAnimal = new Animals();
+$newCustomClosure = $customClosure->bindTo($newAnimal);
+$newCustomClosure();
