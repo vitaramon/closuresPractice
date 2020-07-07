@@ -13,7 +13,7 @@ foreach ($testResultFirst as $resultRow) {
 
 /** Second example - using BindTo */
 $customClosure = function () {
-    echo $this->getBarkForCurrentAnimal();
+    echo $this->getAnimalType() . PHP_EOL;
 };
 
 $newAnimal = new Animals();
