@@ -1,5 +1,6 @@
 <?php
 
+use classes\AnimalInterface;
 use classes\Animals;
 
 /** First example - simple using closure */
@@ -20,3 +21,9 @@ $customClosure = function () {
 $newAnimal = new Animals();
 $newCustomClosure = $customClosure->bindTo($newAnimal);
 $newCustomClosure();
+
+/** Simple example of traits using */
+$newAnimal = AnimalInterface::TYPE_OF_FOOD_PREDATOR;
+
+$newAnimal->sayWhatItEat();
+

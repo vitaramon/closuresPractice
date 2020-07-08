@@ -33,6 +33,19 @@ interface AnimalInterface
         'silence',
     ];
 
+    public const TYPE_OF_FOOD_PREDATOR = 1;
+    public const TYPE_OF_FOOD_HERBIVOROUS = 2;
+
+    public const TYPES_OF_FOOD_MAP = [
+        self::TYPE_OF_FOOD_PREDATOR,
+        self::TYPE_OF_FOOD_HERBIVOROUS,
+    ];
+
+    public const TYPES_OF_FOOD_NAMES_TRANSCRIPT = [
+        self::TYPE_OF_FOOD_PREDATOR    => 'Meat',
+        self::TYPE_OF_FOOD_HERBIVOROUS => 'Herbs',
+    ];
+
     public function setAnimalType(string $animalType): void;
 
     public function getAnimalType(): string;

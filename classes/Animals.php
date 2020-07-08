@@ -2,6 +2,7 @@
 
 namespace classes;
 
+use classes\traits\AnimalTrait;
 use Exception;
 
 /**
@@ -10,10 +11,17 @@ use Exception;
  */
 class Animals implements AnimalInterface
 {
+    use AnimalTrait;
+
     /**
      * @var string
      */
     private $animalType = self::ANIMAL_TYPE_DEFAULT;
+
+    /**
+     * @var int
+     */
+    public $typeOfFood = self::TYPE_OF_FOOD_PREDATOR;
 
     /**
      * @param string $animalType
