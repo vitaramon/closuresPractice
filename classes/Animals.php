@@ -1,6 +1,8 @@
 <?php
 
-include 'AnimalInterface.php';
+namespace classes;
+
+use Exception;
 
 /**
  * Class Animals
@@ -15,7 +17,6 @@ class Animals implements AnimalInterface
 
     /**
      * @param string $animalType
-     * @return void
      * @throws Exception
      */
     public function setAnimalType(string $animalType): void

@@ -1,7 +1,10 @@
 <?php
 
+namespace classes;
+
 /**
  * Interface AnimalInterface
+ * @package classes
  */
 interface AnimalInterface
 {
@@ -27,9 +30,10 @@ interface AnimalInterface
     ];
 
     public const ANIMAL_BARK_DEFAULT_VALUE = [
-        'silence'
+        'silence',
     ];
 
     public function setAnimalType(string $animalType): void;
+
     public function getAnimalType(): string;
 }
