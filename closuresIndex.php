@@ -17,7 +17,6 @@ spl_autoload_register(function ($className) {
 });
 
 /** First example - simple using closure */
-
 $model = new Animals();
 $model->setAnimalType(Animals::ANIMAL_TYPE_DOG);
 $testResultFirst = $model->checkClosuresInWork(Animals::CLOSURE_EXAMPLE_TYPE_ONE);
