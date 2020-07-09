@@ -28,8 +28,8 @@ trait AnimalTrait
             throw new Exception($errorMsg);
         }
 
-        echo 'This animal eat '
-            . $this->typeOfFood
+        echo 'This animal eat: '
+            . $typeOfFood
             . PHP_EOL;
     }
 }

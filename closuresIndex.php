@@ -3,6 +3,19 @@
 use classes\AnimalInterface;
 use classes\Animals;
 
+/** Simple testing of autoloading classes without Composer */
+spl_autoload_register(function ($className) {
+    $className = __DIR__ . '/' . str_replace('\\', '/', $className) . '.php';
+    try {
+        include $className;
+    } catch (Exception $e) {
+        $errorMsg = 'Failed to include class '
+            . $className
+            . PHP_EOL;
+        throw new Exception($errorMsg);
+    }
+});
+
 /** First example - simple using closure */
 
 $model = new Animals();
@@ -23,7 +36,6 @@ $newCustomClosure = $customClosure->bindTo($newAnimal);
 $newCustomClosure();
 
 /** Simple example of traits using */
-$newAnimal = AnimalInterface::TYPE_OF_FOOD_PREDATOR;
-
+$newAnimal->typeOfFood = AnimalInterface::TYPE_OF_FOOD_PREDATOR;
 $newAnimal->sayWhatItEat();
 
